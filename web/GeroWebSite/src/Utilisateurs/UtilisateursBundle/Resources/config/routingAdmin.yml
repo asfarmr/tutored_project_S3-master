@@ -1,0 +1,9 @@
+adminUtilisateurs_index:
+    path:     /
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:index" }
+    methods:  GET
+
+adminUtilisateurs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UtilisateursBundle:UtilisateursAdmin:index" }
+    methods:  DELETE

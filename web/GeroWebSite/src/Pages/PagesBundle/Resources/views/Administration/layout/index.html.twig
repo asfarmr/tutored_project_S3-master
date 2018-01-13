@@ -1,0 +1,35 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+    <h1>Editer les pages</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td>{{ page.titre }}</td>
+                <td>
+                            <a href="{{ path('adminPages_show', { 'id': page.id }) }}"><i class="icon-book"></i> Voir</a>
+                            <a href="{{ path('adminPages_edit', { 'id': page.id }) }}"><i class="icon-edit"></i> Editer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('adminPages_new') }}">Nouvelle page</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

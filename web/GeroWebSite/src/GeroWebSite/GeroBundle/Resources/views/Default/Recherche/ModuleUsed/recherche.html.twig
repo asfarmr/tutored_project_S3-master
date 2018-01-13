@@ -1,0 +1,8 @@
+<li class="list-inline-item">
+    Rechercher un produit:   &nbsp;&nbsp;
+<form action="{{ path('RechercheProduits') }}" METHOD="POST" class="navbar-form form-search pull-right">
+     {{ form_widget(form.recherche) }}
+    <button type="submit" class="btn icon-search"></button>
+    {{ form(form) }}
+</form>
+</li>

@@ -1,0 +1,51 @@
+
+{% extends "::Layout/Layout.html.twig" %}
+{% block title %}{{ produit.nom }}{% endblock %}
+{% block description %}{{ produit.description }}{% endblock %}
+{% block body %}
+{#TODO refaire le style de la page#}
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/categorieNav.html.twig'%}
+            </div>
+
+            <div class="span2">
+                    <div class="span1">
+                        <img src="{{ produit.image.path }}"width="470" height="310">
+                    </div>
+
+                    <div class="span10">
+                        <h4>{{ produit.nom  }}</h4>
+                        <h5>{{ produit.categorie.nomCategorie }}</h5>
+                        <p>{{ produit.description }}</p>
+                         <p>{{ produit.prixUnitaire }} €</p>
+
+                        {% if Panier[produit.id] is not defined %}
+                            <form action="{{ path('ajouter', { 'id' : produit.id}) }}" method="get">
+
+                                <select name="qte" class="span1">
+                                    {% for i in 1..10  %}
+                                        <option value="{{ i }}">{{ i }}</option>
+                                    {% endfor %}
+
+                                </select>
+
+                                <div>
+                                    <button class="btn btn-primary">Ajouter au panier</button>
+                                </div>
+                            </form>
+                        {% else %}
+                            <div>
+                                <a href="{{ path('Panier') }}" class="btn btn-primary">Voir mon panier</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

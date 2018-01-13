@@ -1,0 +1,38 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+    <h1>Page</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id &nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <td>{{ page.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre &nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <td>{{ page.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <td>{{ page.contenu }}</td>
+            </tr>
+        </tbody>
+    </table><br><br>
+
+
+    <a href="{{ path('adminPages_edit', { 'id': page.id }) }}"><i class="icon-book"></i> Editer</a>
+
+    {{ form_start(delete_form) }}
+    <button type="submit" class="icon-trash"> Supprimer</button>
+    {{ form_end(delete_form) }}
+
+    <a href="{{ path('adminPages_index') }}"><i class="icon-arrow-left"></i> Retour</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{#affichage des categorie#}
+{% for categorie in categories %}
+   <li class="list-inline-item">
+        <a href="{{ path('CategorieProduits',{'categorie' : categorie.id}) }}">{{categorie.nomCategorie  }}</a>
+    </li>
+{% endfor %}
+
+

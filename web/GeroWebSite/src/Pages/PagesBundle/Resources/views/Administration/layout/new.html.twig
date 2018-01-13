@@ -1,0 +1,23 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+    <h1>Page creation</h1>
+            <div class="span10">
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Ajouter" />
+                {{ form_end(form) }}
+            </div><br>
+        <div class="span12">
+        <ul class="list-group">
+            <li class="list-group-flush">
+                <a href="{{ path('adminPages_index') }}"><i class="icon-backward"></i> Retour</a>
+            </li>
+        </ul>
+    </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

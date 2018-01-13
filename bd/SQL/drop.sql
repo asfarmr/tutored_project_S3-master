@@ -1,0 +1,13 @@
+drop table a_pour_role;
+drop table ajout_argent;
+drop table benevole;
+drop table categorie;
+drop table consomme;
+drop table course;
+drop table enfant;
+drop table est_compose_de;
+drop table personne;
+drop table produit;
+drop table produit_compose;
+drop table produit_simple;
+drop table role;

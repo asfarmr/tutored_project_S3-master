@@ -1,0 +1,24 @@
+benevole_course_index:
+    path:     /
+    defaults: { _controller: "GeroBundle:CourseAdmin:index" }
+    methods:  GET
+
+benevole_course_show:
+    path:     /{id}/show
+    defaults: { _controller: "GeroBundle:CourseAdmin:show" }
+    methods:  GET
+
+benevole_course_new:
+    path:     /new
+    defaults: { _controller: "GeroBundle:CourseAdmin:new" }
+    methods:  [GET, POST]
+
+benevole_course_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GeroBundle:CourseAdmin:edit" }
+    methods:  [GET, POST]
+
+benevole_course_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GeroBundle:CourseAdmin:delete" }
+    methods:  DELETE

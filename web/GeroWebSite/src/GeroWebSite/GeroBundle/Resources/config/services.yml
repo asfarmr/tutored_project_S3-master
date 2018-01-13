@@ -1,0 +1,10 @@
+services:
+#    gero.example:
+#        class: GeroWebSite\GeroBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+  redirectionListener:
+     class: GeroWebSite\GeroBundle\Listener\RedirectionListener
+     arguments: ["@service_container", "@session"]
+     tags:
+       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest}

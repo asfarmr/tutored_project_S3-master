@@ -1,0 +1,27 @@
+{% extends '::layout/layoutBenevole.html.twig' %}
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+            <h1>Course edit</h1>
+            <div class="span10">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <button type="submit" class="icon-book" > Editer</button>
+
+                {{ form_end(edit_form) }}
+            </div>
+            <div class="span12">
+
+                {{ form_start(delete_form) }}
+                <button type="submit" class="icon-trash"> Supprimer</button>
+                {{ form_end(delete_form) }}
+
+
+                <a href="{{ path('benevole_course_index') }}"><i class="icon-arrow-left"></i> Retour</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

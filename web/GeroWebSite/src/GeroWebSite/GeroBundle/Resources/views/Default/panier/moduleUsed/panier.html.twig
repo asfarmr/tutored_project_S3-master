@@ -1,0 +1,8 @@
+
+            <a class=" badge-light nav-link" href="{{ path('Panier') }}">
+               {% if article == 0 %}
+                   (0) panier
+               {% else %}
+                    ({{ article }}) panier
+               {% endif %}
+           </a>

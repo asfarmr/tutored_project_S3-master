@@ -1,0 +1,49 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+            <h1>Course</h1>
+
+            <table>
+                <tbody>
+                    <tr>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <th>Id</th>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>{{ course.id }}</td>
+                    </tr>&nbsp;&nbsp;&nbsp;
+                    <tr>
+                        <th>Montantcourse</th>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>{{ course.montantCourse }} €</td>&nbsp;&nbsp;&nbsp;
+                    </tr>&nbsp;&nbsp;&nbsp;
+                    <tr>
+                        <th>Datecourse</th>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>{% if course.dateCourse %}{{ course.dateCourse|date('Y-m-d H:i:s') }}{% endif %}</td>&nbsp;&nbsp;&nbsp;
+                    </tr>&nbsp;&nbsp;&nbsp;
+
+                 <tr>
+                        <th>Produit</th>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>{{  course.produit.nom}}</td>&nbsp;&nbsp;&nbsp;
+                    </tr>&nbsp;&nbsp;&nbsp;
+
+
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('benevole_course_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    <a href="{{ path('benevole_course_edit', { 'id': course.id }) }}">Edit</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+<div class="container" style="right: -4%; top: 13%;">
+    <div class="row">
+        <div class="col-12">
+
+    <h1>Produit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ produit.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>Disponible</th>
+                <td>{% if produit.disponible %}oui{% else %}Non{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Prixunitaire</th>
+                <td>{{ produit.prixUnitaire }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ produit.stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('adminProduit_index') }}">Retour</a>
+        </li>
+        <li>
+            <a href="{{ path('adminProduit_edit', { 'id': produit.id }) }}">Editer</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+            </div>
+    </div>
+    </div>
+{% endblock %}

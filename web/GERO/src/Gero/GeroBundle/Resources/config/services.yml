@@ -1,0 +1,4 @@
+services:
+#    gero.example:
+#        class: Gero\GeroBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

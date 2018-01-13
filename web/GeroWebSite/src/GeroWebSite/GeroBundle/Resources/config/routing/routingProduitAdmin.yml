@@ -1,0 +1,24 @@
+adminProduit_index:
+    path:     /
+    defaults: { _controller: "GeroBundle:ProduitAdmin:index" }
+    methods:  GET
+
+adminProduit_show:
+    path:     /{id}/show
+    defaults: { _controller: "GeroBundle:ProduitAdmin:show" }
+    methods:  GET
+
+adminProduit_new:
+    path:     /new
+    defaults: { _controller: "GeroBundle:ProduitAdmin:new" }
+    methods:  [GET, POST]
+
+adminProduit_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GeroBundle:ProduitAdmin:edit" }
+    methods:  [GET, POST]
+
+adminProduit_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GeroBundle:ProduitAdmin:delete" }
+    methods:  DELETE

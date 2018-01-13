@@ -1,0 +1,29 @@
+{% block body %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-info bg-light" style="background-color: rgba(166,166,166,0.35);">
+    <a class="navbar-brand" href="{{ path('home') }}">Gero</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="margin-left:40%;">
+            <li class="nav-item active">
+                <a class=" badge-light nav-link" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {#{% include 'GeroWebSite/GeroBundle:panier/moduleUsed/panier.html.twig'%}#}
+            <li class="nav-item active">
+                <a class=" badge-light nav-link" href="{{ path('produit') }}">Produits <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                {{ render(controller("GeroBundle:Panier:menu")) }}
+            </li>
+        </ul>
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursCo.html.twig'%}
+        {% else %}
+            {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig'%}
+        {% endif %}
+    </div>
+</nav>
+{% endblock %}

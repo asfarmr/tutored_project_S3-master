@@ -1,0 +1,20 @@
+            <p>Utilisateur:  <a href="{{ path('fos_user_profile_show')}}"><i class="icon-user"></i> &nbsp;{{ app.user.username }}</a> &nbsp;&nbsp;&nbsp;
+                Solde :  <a href="{{ path('Solde')}}"><i class="icon-user"></i>{{ app.user.solde }}€</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               {% if app.user.Roles|length == 1  %}
+                Role:
+                {% else %}
+                Roles:
+                {% endif %}
+                {%  for role in app.user.Roles%}
+
+                        {% if role == 'ROLE_ADMIN' %}
+                            <a href="{{ path('adminProduit_index') }}"><i class="icon-star"></i></a>
+                        {% elseif role == 'ROLE_BENEVOLE'  %}
+                            <a href="{{ path('benevole_course_index') }}"><i class="icon-user-md"></i></a>
+                        {% elseif role == 'ROLE_USER'%}
+
+                        {% endif %}
+                    {% endfor %}
+            </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="{{ path('fos_user_security_logout') }}" type="button" class="btn btn-outline-success" >Deconnexion</a>

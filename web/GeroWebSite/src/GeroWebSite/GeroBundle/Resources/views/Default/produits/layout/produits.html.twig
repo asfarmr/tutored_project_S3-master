@@ -1,0 +1,69 @@
+{#{% include '::modulesUsed/categorieNav.html.twig'%}#}
+
+<div class="container">
+    <div class="row">
+
+            <div class="col-12">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="{{ path('produit') }}">Produits</a> </li><br>
+                    {{ render (controller('GeroBundle:Categorie:categorieNav')) }}
+                    <div class="pull-right">
+                        {{ render(controller("GeroBundle:Produits:recherche")) }}
+                    </div>
+
+                </ul>
+            </div>
+     <br/>
+
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
+
+        {#TODO refaire le style de la page#}
+        {#affichage des produits#}
+        {% if produits|length != 0 %}
+            <ul class="">
+                {% for produit in produits %}
+                    <li class="span4 list-group-item">
+                            <img src="{{ produit.image.path }}" width="300" height="300">
+                        <div class="">
+                                <h4>{{ produit.nom }}</h4>
+                                <p>{{ produit.prixUnitaire}}€</p>
+                                <a class="btn btn-primary" href="{{ path('presentation', { 'id' : produit.id }) }}">Plus d'infos</a>
+                                <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id}) }}">Ajouter au panier</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    {% else %}
+        Aucun produit
+    {% endif %}
+</div>
+
+{% include "::Layout/Layout.html.twig" %}
+
+
+
+
+

@@ -1,0 +1,8 @@
+Solde:
+    path:     /solde
+    defaults: { _controller: GeroBundle:UtilisateursSolde:solde}
+
+soldeTraitement:
+    path:     /solde/ajouter
+    defaults: { _controller: GeroBundle:UtilisateursSolde:soldeTraitement}
+    methods:  [POST]

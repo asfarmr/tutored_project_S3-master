@@ -1,0 +1,109 @@
+<?php
+
+namespace GeroWebSite\GeroBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Produit_Composer
+ *
+ * @ORM\Table(name="produit__composer")
+ * @ORM\Entity(repositoryClass="GeroWebSite\GeroBundle\Repository\Produit_ComposerRepository")
+ */
+class Produit_Composer
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id_Produit", type="integer")
+     */
+    private $idProduit;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="qteComposition", type="integer")
+     */
+    private $qteComposition;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Produit_Simple", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $produitSimple;
+
+    /**
+     * @ORM\OneToOne(targetEntity="GeroWebSite\GeroBundle\Entity\Produit", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $produit;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idProduit
+     *
+     * @param integer $idProduit
+     *
+     * @return Produit_Composer
+     */
+    public function setIdProduit($idProduit)
+    {
+        $this->idProduit = $idProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get idProduit
+     *
+     * @return int
+     */
+    public function getIdProduit()
+    {
+        return $this->idProduit;
+    }
+
+    /**
+     * Set qteComposition
+     *
+     * @param integer $qteComposition
+     *
+     * @return Produit_Composer
+     */
+    public function setQteComposition($qteComposition)
+    {
+        $this->qteComposition = $qteComposition;
+
+        return $this;
+    }
+
+    /**
+     * Get qteComposition
+     *
+     * @return int
+     */
+    public function getQteComposition()
+    {
+        return $this->qteComposition;
+    }
+}
+

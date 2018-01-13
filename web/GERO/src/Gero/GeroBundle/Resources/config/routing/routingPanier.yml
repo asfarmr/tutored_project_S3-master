@@ -1,0 +1,8 @@
+panier:
+    path:     /panier
+    defaults: { _controller: GeroBundle:Panier:panier}
+
+validation:
+    path:     /validation
+    defaults: { _controller: GeroBundle:Panier:validation}
+    methods:  [POST]

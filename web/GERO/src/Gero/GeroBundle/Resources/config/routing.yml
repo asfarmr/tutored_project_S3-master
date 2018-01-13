@@ -1,0 +1,7 @@
+routingPanier:
+  resource: "@GeroBundle/Resources/config/routing/routingPanier.yml"
+  prefix: /panier
+
+routingProduits:
+  resource: "@GeroBundle/Resources/config/routing/routingProduit.yml"
+  prefix: /

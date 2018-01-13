@@ -1,0 +1,7 @@
+Produits:
+    path:     /
+    defaults: { _controller: GeroBundle:Produits:produit}
+
+presentation:
+    path:     /produits/{id}
+    defaults: { _controller: GeroBundle:Produits:presentation}

@@ -1,0 +1,20 @@
+home:
+    path:     /
+    defaults: { _controller: GeroBundle:Produits:home}
+
+produit:
+    path: /produits
+    defaults: {_controller: GeroBundle:Produits:produit}
+
+CategorieProduits:
+    path:     /categorie/{categorie}
+    defaults: { _controller: GeroBundle:Produits:categorie}
+
+presentation:
+    path:     /produits/{id}
+    defaults: { _controller: GeroBundle:Produits:presentation}
+
+RechercheProduits:
+    path:     /recherche
+    defaults: { _controller: GeroBundle:Produits:rechercherTraitement}
+    methods:  [POST]

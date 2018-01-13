@@ -1,0 +1,57 @@
+{% extends "::Layout/Layout.html.twig" %}
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+    <div class="container">
+        <div class="row">
+            <div class="span9">
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="aller alert-success">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                <h2>Recharger votre Solde</h2>
+                <p>Votre solde actuel: {{ app.user.solde }} €</p>
+                {{ form_start(form) }}
+
+                {{ form_widget(form) }}
+
+                {{ form_end(form) }}<br> <br><br> <br>
+
+
+                    {#<form action="{{ path('ajouterSolde')}}" method="get">#}
+
+                                {#<div class="btn-group btn-group-justified" role="group" aria-label="...">#}
+                                    {#<div class="btn-group" role="group">#}
+                                        {#<button type="button" class="btn btn-default" value="{{ 5 }}">5€</button>#}
+                                    {#</div>&nbsp;&nbsp;#}
+                                    {#<div class="btn-group" role="group">#}
+                                        {#<button type="button" class="btn btn-default" value="{{ 10 }}">10€</button>#}
+                                    {#</div>&nbsp;&nbsp;#}
+                                    {#<div class="btn-group" role="group">#}
+                                        {#<button type="button" class="btn btn-default" value="{{ 15 }}">15€</button>#}
+                                    {#</div>&nbsp;&nbsp;#}
+                                {#</div>&nbsp;&nbsp; <br>#}
+                                {#<label for="exampleInputEmail1">Autre montant:#}
+                                {#<input type="number" class="form-control" ></label><br>#}
+                                {#<label>Autre montant<input type="text" value="{{ i }}"></label>#}
+                                {#<button type="button" class="btn btn-success">Valider</button><br> <br><br> <br>#}
+                    {#</form>#}
+                <a href="{{ path('produit') }}" class="btn btn-primary">Continuer mes achats</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                <p> Vous devez vous connectez pour recharger votre compte !</p>
+                </div>
+
+
+            </div>
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Se connecter</a>
+        </div>
+
+    {% endif %}
+{% endblock %}

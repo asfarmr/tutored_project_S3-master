@@ -1,0 +1,19 @@
+routingPanier:
+  resource: "@GeroBundle/Resources/config/routing/routingPanier.yml"
+  prefix: /panier
+
+routingProduits:
+  resource: "@GeroBundle/Resources/config/routing/routingProduit.yml"
+  prefix: /
+
+routingSolde:
+  resource: "@GeroBundle/Resources/config/routing/routingSolde.yml"
+  prefix: /
+
+routingCourseAdmin:
+    resource: "@GeroBundle/Resources/config/routing/routingCourseAdmin.yml"
+    prefix: /benevole/course
+
+routingProduitAdmin:
+  resource: "@GeroBundle/Resources/config/routing/routingProduitAdmin.yml"
+  prefix: /admin/produit
